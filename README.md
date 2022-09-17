@@ -1,4 +1,4 @@
-#Special Notes for Getting Started with Localstorage Todo
+## Special Notes for Getting Started with Localstorage Todo
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app), using the [Redux](https://redux.js.org/) and [Redux Toolkit](https://redux-toolkit.js.org/) template. However, for avoiding the potential performance-related issues Redux and Redux Toolkit were neither initialized nor used. For enabling complex functionality (like shopping cart or storing user data) these two state management tools should be used after modifications
 
