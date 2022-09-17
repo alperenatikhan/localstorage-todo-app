@@ -1,0 +1,320 @@
+@import 'https://fonts.googleapis.com/css2?family=Inter:wght@200;600;800&display=swap';
+
+$baby-powder: rgba(251, 254, 249, 1);
+$raisin-black: rgba(36,36,50, 1);
+$slate-gray: rgba(99, 118, 141, 1);
+$coquelicot: rgba(243, 66, 19, 1);
+$yellow-orange: rgba(255, 177, 64, 1);
+$skobeloff: rgba(0,116,116,1);
+$skobeloff-panel: rgba(0,116,116,0.5);
+$skobeloff-panel-light: rgba(0,116,116,0.2);
+$sonic-silver: rgba(112, 111, 111, 0.3);
+$rich-black-fogra-29: rgba(0, 21, 36, 1);
+$rich-black-fogra-29-2: rgba(5, 25, 35, 1);
+
+$pageBackgroundDark : #1B2430;
+$panelBackgroundDark: #51557E;
+$darkAccentDark: #816797;
+$textColorDark: #D6D5A8;
+$pageBackgroundLight : $baby-powder;
+$panelBackgroundLight: $skobeloff-panel;
+$darkAccentLight: #816797;
+$textColorLight:  $raisin-black;
+$deleteColor: $coquelicot;
+$warningColor:$yellow-orange;
+$edgeMargin: 5vw ;
+$borderRadius: 16px;
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family:'Inter', sans-serif;
+}
+
+
+
+
+@mixin centerColumn {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin centerRow {
+    @include centerColumn;
+    flex-direction: row;
+    
+}
+
+@mixin spaceBetween{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+@mixin header {
+    font-size: 25px;
+    font-weight: 800; 
+    text-align: center;
+}
+
+@mixin panelWidth{
+    width:min(70vw,500px);
+    min-width: 380px;
+
+}
+
+@mixin button{
+    width: 80px;
+    height:30px;
+    border-radius: calc($borderRadius/3);
+}
+
+.Outer-wrapper{
+    background-color: whitesmoke; 
+}
+
+.Loading-screen{
+    @include centerColumn;
+    height: 80vh;
+   }
+
+.Dark-theme{
+    background-color:  #121212 ;
+    color: $textColorDark;
+    height: 100vh;
+}
+
+.Light-theme{
+    background-color: $baby-powder;
+    color: $textColorLight;
+    height: 100vh;
+}
+
+
+
+.Navbar{
+background-color: whitesmoke;
+color: $skobeloff;
+height: 8vh;
+@include spaceBetween;
+
+&.-dark{
+
+background-color: $raisin-black;
+color:$textColorDark;
+
+} 
+
+.Navbar-header{
+@include header;
+margin-left: calc(2*$edgeMargin);
+}
+
+.Navbar-username{    
+margin-right: $edgeMargin;
+}
+
+
+}
+
+.Addtodo-panel{
+margin: $edgeMargin auto;
+padding: min($edgeMargin, 20px) ;
+@include centerColumn;
+@include panelWidth;
+background-color: $skobeloff;
+border-radius: calc($borderRadius/2);
+color:whitesmoke;
+
+&.-dark{
+    background-color: #607D8B;
+    color:$textColorDark
+   }
+
+p.Addtodo-header{
+    font-weight: 600;
+    margin:auto;
+    margin-bottom: min(calc($edgeMargin/2), 20px);
+    
+}
+
+input{
+    height:20px;
+
+
+    
+
+
+}
+
+button{
+background-color: whitesmoke;
+color: $slate-gray;
+@include button;
+font-weight: 600;
+margin-left: calc($edgeMargin/2);
+}
+
+}
+
+.Todo-list{
+    @include panelWidth;
+    margin: calc($edgeMargin/2) auto;
+    padding: calc($edgeMargin/2) $edgeMargin;
+    @include centerColumn;
+    background-color: #dcdcdc;
+    border-radius: $borderRadius;
+
+    .Todo-counter-header{
+        margin-bottom: 12px;
+        color: $textColorLight;
+        h4{
+        font-size: 18px;
+        margin-bottom: 12px;
+        }
+        p{
+            color: $textColorLight;
+        }
+    }   
+    
+
+    &.-dark{
+        background-color:#212121;
+        color:$textColorLight;
+            .Todo-item{
+                 background-color: #121212;
+
+                 .Info-message{
+                    color: whitesmoke;
+                }
+
+
+                    }
+            .Todo-counter-header{
+                color: $textColorDark;
+                        h4{
+                            font-size: 18px;
+                            margin-bottom: 12px;
+                            }
+                        p{
+                             color: $textColorDark;
+                            }
+                }    
+
+}
+
+.Todo-counter-header{
+        @include centerColumn;
+           
+    }      
+
+.Todo-item{
+    @include centerColumn;
+    width: 90%;
+    padding: min(calc($edgeMargin/2),20px);
+    margin: min(calc($edgeMargin/5),30px);
+    background-color: $baby-powder;
+    color: $skobeloff;
+    border-radius: calc($borderRadius/2);
+
+    .Error-message{
+        color:$coquelicot;
+    }
+}
+
+.Completed-count{
+
+color:$rich-black-fogra-29;
+
+}
+
+    }
+
+.Button-group{
+        @include spaceBetween;
+        width: 100%;
+button{
+    margin-top: min($edgeMargin, 20px);
+    @include button
+   
+}
+
+.Delete-button{
+    background-color: $deleteColor;
+    color:$baby-powder;
+}
+
+.Edit-button{
+    background-color: whitesmoke;
+    color: $skobeloff;
+}
+
+.Complete-button{
+    background-color: $skobeloff;
+    color: $baby-powder;
+}
+        
+        }
+
+.Info-message{
+    color:$rich-black-fogra-29-2
+}
+
+.Username-entry{
+    @include centerColumn;
+    height: 50vh;
+    padding-bottom: 30vh ;
+    p{
+        margin-top: 6px;
+        margin-bottom:12px;
+    }
+    button{
+        font-size: 16px;
+        background-color: whitesmoke;
+        padding:3px;
+        color: $skobeloff;
+        margin-left: 12px;
+        height:30px;
+        &:hover{
+            border:1px solid $slate-gray;
+            }
+    }
+    input{
+        font-size: 14px;
+        height:18px;
+        color: $skobeloff;
+        font-weight: bold;
+        
+    }
+}
+  
+.Footer{
+    padding:calc($edgeMargin/5);
+    @include centerRow;
+    background-color: $skobeloff;
+   
+
+    .Footer-text{
+
+        color:$baby-powder;
+        
+    span.signature{
+        
+        a{
+            text-decoration: none;
+            color:inherit;
+            font-size:16px;
+            font-family: monospace;
+            &:hover{
+                color:$textColorDark;
+            }
+        }
+
+        }
+
+}
+
+}
