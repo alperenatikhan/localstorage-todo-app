@@ -2,7 +2,7 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app), using the [Redux](https://redux.js.org/) and [Redux Toolkit](https://redux-toolkit.js.org/) template. However, for avoiding the potential performance-related issues Redux and Redux Toolkit were neither initialized nor used. For enabling complex functionality (like shopping cart or storing user data) these two state management tools should be used after modifications
 
-In [src/App.js] () file, set the [apiURL] () variable for adding the API crud functionality. If localStorage is needed to be used for backup purposes, please activate the comments in [src/App.js] () , [src/components/TodoItem.jsx]() and [src/components/AddTodo.jsx]().
+In [src/App.js]() file, set the [apiURL]() variable for adding the API crud functionality. If localStorage is needed to be used for backup purposes, please activate the comments in [src/App.js]() , [src/components/TodoItem.jsx]() and [src/components/AddTodo.jsx]().
 
 Scss made the complex styling and theming possible. For modifying the styles and adding more themes, please see and visit [src/scss/styles.scss]()
 
