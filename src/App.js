@@ -22,9 +22,9 @@ const [usernameError,setUsernameError] = useState(false)
 const formContent = useRef()
 const usernameInput = useRef()
 /*
-Due to security reasons I am not providing the apiURL, please replace the value accordingly.
+Please replace the apiURL value accordingly. Preferably as:   process.env.REACT_APP_API_URL
 */
-const apiURL= process.env.REACT_APP_API_URL
+const apiURL= 'https://631e05dacc652771a4900917.mockapi.io/todos'
 let dataStringified = JSON.stringify(data)
 
 
